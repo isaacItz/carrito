@@ -56,6 +56,16 @@ let app = new Vue({
             }
             this.tenis[cve].enCarrito++;
         },
+
+        quitarTeni:function (cve) {
+
+            const index = this.tenisCarrito.indexOf(cve);
+            if (index > -1) {
+                this.tenisCarrito.splice(index, 1);
+            }
+
+            this.tenis[cve].enCarrito = 0;
+        },
     },
     computed: {
         sumarTenis() {
